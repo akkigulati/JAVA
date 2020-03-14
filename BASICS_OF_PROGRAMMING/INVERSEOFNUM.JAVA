@@ -3,6 +3,8 @@
     without repeating any. e.g. 23415 is a 5 digit long number containing all digits from 1 to 5 without missing and repeating
     any digit from 1 to 5. 
     Take a look at few other valid numbers - 624135, 81456273 etc.
+    
+    
     Here are a few invalid numbers - 139, 7421357 etc.
     
     3. The inverse of a number is defined as the number created by interchanging the face value and index of digits of number.
