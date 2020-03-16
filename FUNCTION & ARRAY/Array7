@@ -1,0 +1,68 @@
+/*Write a program to input a list of n integers in an array and arrange them in a way similar to the to-and-fro movement of a Pendulum.
+
+The minimum element out of the list of integers, must come in center position of array. If there are even elements, then minimum element should be moved to (n-1)/2 index (considering that indexes start from 0)
+The next number (next to minimum) in the ascending order, goes to the right, the next to next number goes to the left of minimum number and it continues like a Pendulum.
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case contains an integer n denoting the size of the array. Then next line contains N space separated integers forming the array.
+
+Output:
+Output the array in Pendulum Arrangement.
+
+Constraints:
+1<=T<=500
+1<=N<=100
+1<=a[i]<=1000
+
+Example:
+Input:
+2
+5
+1 3 2 5 4
+5
+11 12 31 14 5
+
+Output:
+5 3 1 2 4
+31 12 5 11 14
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = sc.nextInt();
+            int arr[] = new int[n];
+         //   int k = sc.nextInt();
+            for (int j = 0; j < n; j++) {
+                arr[j] = sc.nextInt();
+            }
+            Arrays.sort(arr);
+            int res[] = new int[n];
+            int start=0;
+            if(n%2==0)
+            start=(n-1)/2;
+            else
+            start=n/2;
+            res[start]=arr[0];
+            
+            for (int j = 1; j < n; j++) {
+                if(j%2==0)
+               {start-=j;
+                   res[start]=arr[j];}
+                else
+                {start+=j;
+                    res[start]=arr[j];}
+                 
+            }
+            for (int j = 0; j < n; j++) {
+                System.out.print(res[j]+" ");
+            }
+            System.out.println();
+         
+        }
+    }
+}
