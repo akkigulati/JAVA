@@ -1,0 +1,67 @@
+/*Given a string S consisting of lowercase Latin Letters. Find the first non repeating character in S.
+
+Input:
+The first line contains T denoting the number of testcases. Then follows description of testcases.
+Each case begins with a single integer N denoting the length of string. The next line contains the string S.
+
+Output:
+For each testcase, print the first non repeating character present in string. Print -1 if there is no non repeating character.
+
+Constraints:
+1 <= T <= 900
+1 <= N <= 104
+
+Example:
+Input :
+3
+5  
+hello
+12
+zxvczbtxyzvy
+6
+xxyyzz
+
+Output :
+h
+c
+-1*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- != 0) {
+            int n = sc.nextInt();
+            sc.nextLine();
+            String s = sc.nextLine();
+            System.out.println(s);
+            int index = firstNon(s);
+            System.out.println(index == -1 ? "Either all characters are repeating or string " +
+                "is empty" : "First non-repeating character is " + s.charAt(index));
+
+        }
+    }
+
+    static final int NO_OF_CHARS = 256;
+    static int count[] = new int[NO_OF_CHARS];
+    static void getCharcount(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i)]++;
+        }
+    }
+    static int firstNon(String s) {
+        getCharcount(s);
+        int index = -1;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (count[s.charAt(i)] == 1) {
+                return i;
+            }
+
+        }
+        return index;
+    }
+}
