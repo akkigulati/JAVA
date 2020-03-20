@@ -1,0 +1,56 @@
+/*Given a string S, check if it is palindrome or not.
+
+Input:
+The first line contains 'T' denoting the number of test cases. T testcases follow. Each testcase contains two lines of input. The first line contains the length of the string and the second line contains the string S.
+
+Output:
+For each testcase, in a new line, print "Yes" if it is a palindrome else "No". (Without the double quotes)
+
+Constraints:
+1 <= T <= 30
+1 <= N <= 100
+
+Example:
+Input:
+1
+4
+abba
+Output:
+Yes
+*/
+import java.util.*;
+import java.io.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t--!=0){
+        int n=sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+    boolean chk=isPalindrome(s,n);
+        if(chk)
+        System.out.println("Yes");
+        else
+        System.out.println("No");
+    }
+        
+    }
+    static boolean isPalindrome(String s,int n){
+        int len=0;
+        if(n%2==0)
+        len=n/2;
+        else
+        len=(n/2)+1;
+        for(int i=0,j=n-1;i<len;i++,j--){
+            if(s.charAt(i)!=s.charAt(j)){
+            
+            return false;
+            
+            }
+        }
+        
+        return true;
+        
+    }  
+}
