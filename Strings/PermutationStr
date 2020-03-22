@@ -1,0 +1,42 @@
+/*Input:
+2
+ABC
+ABSG
+
+Output:
+ABC ACB BAC BCA CAB CBA 
+ABGS ABSG AGBS AGSB ASBG ASGB BAGS BASG BGAS BGSA BSAG BSGA GABS GASB GBAS GBSA GSAB GSBA SABG SAGB SBAG SBGA SGAB SGBA*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main{
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		   sc.nextLine();
+		while(t--!=0){
+		    String s=sc.nextLine();
+		    char temp[] = s.toCharArray();
+		    Arrays.sort(temp);
+		    s=new String(temp);
+		    permute(s,"");
+		    System.out.println();
+		    
+		}
+	}
+	static void permute(String s,String a){
+	    if(s.length()==0){
+	        System.out.print(a+" ");
+	    }
+	    else{for(int i=0;i<s.length();i++){
+	         char ch = s.charAt(i); 
+  
+            String ros = s.substring(0, i) +   s.substring(i + 1); 
+	        permute(ros,a+ch);
+	    }
+	}
+	    
+	}
+}
