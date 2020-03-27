@@ -1,0 +1,56 @@
+/*
+Sample Input
+3
+10
+20
+30
+Sample Output
+-   -   -
+-   -   30
+-   20  -
+-   20  30
+10  -   -
+10  -   30
+10  20  -
+10  20  30
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static int[] dec2bin(int a, int n) {
+        int[] temp = new int[n];
+        int pos = n - 1;
+        while (a != 0) {
+            temp[pos] = a % 2;
+            a /= 2;
+            pos--;
+        }
+        return temp;
+    }
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int N = (int) Math.pow(2, n);
+
+        for (int i = 0; i < N; i++) {
+            int temp[] = dec2bin(i, n);
+            for (int j = 0; j < n; j++) {
+                if (temp[j] == 1) {
+                    System.out.print(arr[j] + "	");
+
+                } else {
+                    System.out.print("-	");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+}
