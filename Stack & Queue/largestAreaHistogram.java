@@ -24,3 +24,51 @@ Sample Input
 Sample Output
 12
 */
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = Integer.parseInt(br.readLine());
+        }
+        Stack < Integer > st = new Stack < > ();
+        int ls[]=new int[n];
+        for (int i = 0; i < n; i++) {
+            while(st.size()>0&&a[st.peek()]>a[i]){
+                st.pop();
+            }if(st.size()==0){
+                ls[i]=-1;
+            }else{
+                ls[i]=st.peek();
+            }
+            st.push(i);
+        }
+        Stack < Integer > rt = new Stack < > ();
+        int rs[]=new int[n];
+        for (int i = n-1; i >=0; i--) {
+            while(rt.size()>0&&a[rt.peek()]>=a[i]){
+                rt.pop();
+            }if(rt.size()==0){
+                rs[i]=n;
+            }else{
+                rs[i]=rt.peek();
+            }
+            rt.push(i);
+        }
+        int maxArea=0;
+        for (int i = 0; i < n; i++) {
+            int Area=a[i]*(rs[i]-ls[i]-1);
+            if (maxArea<Area)
+            maxArea=Area;
+        }
+        System.out.println(maxArea);
+    }
+}
