@@ -181,9 +181,11 @@ public class Main {
     public void removeLast(){
       // write your code here
       if(size==0){
+       //head==null
           System.out.println("List is empty");
           return;
       }else if(size==1){
+       //head==tail
           head=tail=null;
       }else{
           Node temp=head;
