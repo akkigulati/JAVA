@@ -181,6 +181,9 @@ public class Main {
                 //now t is holding given index and temp is holding idx-1.new node is to be in between. 
                 temp.next = nn;
                 nn.next = t;
+             //below one can also be used.
+             /*nn.next = temp.next;
+                temp.next = nn;*/
                 size++;
             }
         }
