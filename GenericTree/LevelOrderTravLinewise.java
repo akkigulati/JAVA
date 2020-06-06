@@ -139,6 +139,26 @@ public class Main {
     }
 
   */
+  /*
+  public static void levelOrderLinewise(Node node) {
+        Queue < pair > qu = new ArrayDeque < > ();
+        qu.add(new pair(node, 1));
+        int currlevel = 1;
+        while (qu.size() > 0) {
+            pair p = qu.remove();
+            int pairlev = p.level;
+            Node pairNode = p.node;
+            if (pairlev != currlevel) {
+                System.out.println();
+                currlevel = pairlev;
+            }
+            System.out.print(pairNode.data + " ");
+            for (Node child: pairNode.children) {
+                qu.add(new pair(child, currlevel+1));
+            }
+        }
+    }
+  */
 
   public static void levelOrderLinewise(Node node){
         Queue<Node> parent=new ArrayDeque<>();
