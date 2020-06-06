@@ -158,6 +158,14 @@ public class Main {
             }
         }
     }
+    public static class pair {
+        Node node;
+        int level;
+        pair(Node node, int level) {
+            this.node = node;
+            this.level = level;
+        }
+    }
   */
 
   public static void levelOrderLinewise(Node node){
