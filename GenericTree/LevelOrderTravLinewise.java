@@ -112,6 +112,33 @@ public class Main {
 
     System.out.println("Node Post " + node.data);
   }
+  /*
+  public static void levelOrderLinewise(Node node) {
+        Queue < Node > parent = new ArrayDeque < > ();
+        Node delim = new Node();
+
+        parent.add(node);
+        parent.add(delim);
+        while (parent.size() > 0) {
+            //remove
+             Node temp=parent.remove();
+            if (temp.data == 0) {
+            System.out.println();
+            if(parent.size()!=0)
+            parent.add(delim);
+            } else {
+                //print
+                System.out.print(temp.data + " ");
+                //add
+                for (Node childrens: temp.children) {
+                    parent.add(childrens);
+                }
+
+            }
+        }
+    }
+
+  */
 
   public static void levelOrderLinewise(Node node){
         Queue<Node> parent=new ArrayDeque<>();
