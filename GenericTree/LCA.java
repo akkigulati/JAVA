@@ -89,6 +89,7 @@ public class Main {
         // System.out.println(first);
         // System.out.println(second);
          int ans = 0;
+        //aage se O(n^2)
         // for (int i: first) {
             
         //     if (second.contains(i)) {
@@ -97,6 +98,7 @@ public class Main {
         //     break;
         //     }
         // }
+      //peeche se m complexity is O(n).
         for(int i=first.size()-1,j=second.size()-1;i>=0&&j>=0;i--,j--){
             if(first.get(i)==second.get(j)){
                 ans=first.get(i);
