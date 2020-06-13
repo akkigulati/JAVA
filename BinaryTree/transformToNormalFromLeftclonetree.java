@@ -89,6 +89,16 @@ public class Main {
     
     return node;
   }
+  /*  public static Node transBackFromLeftClonedTree(Node node){
+      if(node==null||node.left==null){
+          return null;
+      }
+    Node lt=transBackFromLeftClonedTree(node.left.left);
+    Node rt=transBackFromLeftClonedTree(node.right);
+    node.left=lt;
+    
+    return node;
+  }*/
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
