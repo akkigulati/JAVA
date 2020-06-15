@@ -97,7 +97,25 @@ public class Main {
     display(node.left);
     display(node.right);
   }
+/*
+  public static void printSingleChildNodes(Node node, Node parent){
+      if(node==null){
+          return;
+      }//check if parent follow 1 child policy
+     if(parent!=null&&parent.left==node&&parent.right==null){
+         //left child exist not right
+         System.out.println(node.data);
+     }
+     if(parent!=null&&parent.right==node&&parent.left==null){
+         //right child exist not left
+         System.out.println(node.data);
 
+     }
+        printSingleChildNodes(node.left,node);
+        printSingleChildNodes(node.right,node);
+  }
+
+*/
   public static void printSingleChildNodes(Node node, Node parent){
       if(node==null){
           return;
