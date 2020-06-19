@@ -85,6 +85,12 @@ public class Main {
                 System.out.println(val);
                 ht.put(val,0);
             }
+            /*
+             if (ht.get(val) !=null) {
+                System.out.println(val);
+                ht.put(val,null);
+            }
+            */
         }
     }
 
