@@ -34,7 +34,28 @@ public class Main {
      String str=sc.nextLine();
      printPermutations(str,"");
     }
-
+/*
+ public static ArrayList<String> perm(String s){
+        if(s.length()==0){
+            ArrayList<String> base=new ArrayList<String>();
+            base.add("");
+            return base;
+        }
+        ArrayList<String> res=new ArrayList<String>();
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            String sub=s.substring(0,i)+s.substring(i+1);
+            ArrayList<String> ans=perm(sub);
+            // for (String st: ans)
+            // res.add(st);
+        //ch will be included
+            for (String it: ans)
+            res.add(ch + it);
+        }
+        return res;
+        
+    }
+*/
     public static void printPermutations(String str,String asf) {
         if(str.length()==0){
             System.out.println(asf);
@@ -49,5 +70,6 @@ public class Main {
         
         
     }
+    
 
 }
