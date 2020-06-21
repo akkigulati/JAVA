@@ -50,6 +50,7 @@ public class Main {
 
       int k = Integer.parseInt(br.readLine());
       PriorityQueue<Integer> pq=new PriorityQueue<>();
+//Selection Process
       for (int i = 0; i < n; i++) {
          if(pq.size()<k){
              pq.add(arr[i]);
