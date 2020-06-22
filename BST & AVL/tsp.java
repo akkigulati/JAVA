@@ -124,6 +124,46 @@ public class Main {
         }
         targetsumPair(root, node.right, tar);
     }
+    /*
+    static ArrayList<Integer> ele=new ArrayList<>();
+public static void fillArrayList(Node node)
+{
+    if(node==null)
+    {
+        return;
+    }
+    fillArrayList(node.left);
+    ele.add(node.data);
+    fillArrayList(node.right);
+}
+
+public static void tsp1(Node root,int tar)
+{
+    fillArrayList(root);
+
+        int lo=0,hi=ele.size()-1;
+         
+         while(lo<hi)
+         {
+             int sum=ele.get(lo)+ele.get(hi);
+             
+             if(sum>tar)
+             {
+                 hi--;
+             }
+             else if(sum<tar)
+             {
+                 lo++;
+             }
+             else{
+                 System.out.println(ele.get(lo)+" "+ele.get(hi));
+                 lo++;
+                 hi--;
+             }
+         
+    }
+}
+    */
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
