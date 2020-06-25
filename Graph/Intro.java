@@ -1,3 +1,12 @@
+/*
+Vertex is 0 -> 1@10 , 3@40 , .
+Vertex is 1 -> 0@10 , 2@10 , .
+Vertex is 2 -> 1@10 , 3@10 , .
+Vertex is 3 -> 0@40 , 2@10 , 4@5 , .
+Vertex is 4 -> 3@5 , 5@5 , 6@8 , .
+Vertex is 5 -> 4@3 , 6@4 , .
+Vertex is 6 -> 4@8 , 5@4 , .
+*/
 import java.util.*;
 
 public class Main{
