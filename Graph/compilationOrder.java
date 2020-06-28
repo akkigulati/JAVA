@@ -31,6 +31,7 @@ Sample Output
 2
 3
 */
+
 import java.io.*;
 import java.util.*;
 
@@ -61,7 +62,7 @@ public class Main {
          int v2 = Integer.parseInt(parts[1]);
          graph[v1].add(new Edge(v1, v2));
       }
-
+//topological doesnt work for cyclic
         order(graph);
    }
     public static void order(ArrayList<Edge>[] graph){
