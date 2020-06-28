@@ -83,7 +83,7 @@ public class Main {
        boolean visited[]=new boolean[graph.length];
        while(qu.size()>0){
            Pair temp=qu.remove();
-           if(!visited[temp.vtx])
+           if(!visited[temp.vtx]){
            //mark
                visited[temp.vtx]=true;
                System.out.println(temp.vtx+"@"+temp.psf);
