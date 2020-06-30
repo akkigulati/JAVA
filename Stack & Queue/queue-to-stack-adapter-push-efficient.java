@@ -15,7 +15,8 @@ Input Format
 Input is managed for you
 Output Format
 Output is managed for you
-Constraints
+Constraints  
+
 Note -> push and size should work in constant time. pop and top should work in linear time.
 Sample Input
 push 10
