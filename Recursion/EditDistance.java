@@ -47,10 +47,15 @@ public class Main {
         if(n2==0){
             return n1;
         }
-        
+         // If last characters of two strings are same, nothing 
+        // much to do. Ignore last characters and get count for 
+        // remaining strings.
         if(s1.charAt(n1-1)==s2.charAt(n2-1)){
             return operations(s1,s2,n1-1,n2-1);
-        }else{
+        }else{// If last characters are not same, consider all three 
+        // operations on last character of first string, recursively 
+        // compute minimum cost for all three operations and take 
+        // minimum of three values. //insert//del//update
             return 1+Math.min(operations(s1,s2,n1,n2-1),Math.min(operations(s1,s2,n1-1,n2),operations(s1,s2,n1-1,n2-1)));            
     }
 }
