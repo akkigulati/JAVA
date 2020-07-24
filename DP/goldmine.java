@@ -33,6 +33,80 @@ Sample Input
 2 7 0 8 5 1
 Sample Output
 33
+
+
+Recursive:-
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int maze[][]=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                maze[i][j]=sc.nextInt();
+            }
+        }
+        int Profit=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+           Profit= Math.max(Goldmine(maze,i,0),Profit);
+        }
+        System.out.println(Profit);
+    }
+    public static int Goldmine(int[][] gold,int sr,int sc){
+        if(sr<0||sr>=gold.length){
+            return Integer.MIN_VALUE;
+        }
+        if(sc==gold[0].length-1){
+            return gold[sr][sc];
+        }
+        return gold[sr][sc]+Math.max(Goldmine(gold,sr,sc+1),Math.max(Goldmine(gold,sr-1,sc+1),Goldmine(gold,sr+1,sc+1)));
+    }
+}
+
+
+Memorization:-
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int maze[][]=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                maze[i][j]=sc.nextInt();
+            }
+        }
+        int Profit=Integer.MIN_VALUE;
+        int mem[][]=new int[n][m];
+        for(int i=0;i<n;i++){
+           Profit= Math.max(Goldmine(maze,i,0,mem),Profit);
+        }
+        System.out.println(Profit);
+    }
+    public static int Goldmine(int[][] gold,int sr,int sc,int mem[][]){
+        if(sr<0||sr>=gold.length){
+            return Integer.MIN_VALUE;
+        }
+        if(sc==gold[0].length-1){
+            return mem[sr][sc]=gold[sr][sc];
+        }
+        if(mem[sr][sc]!=0){
+            return mem[sr][sc];
+        }
+        return mem[sr][sc]=gold[sr][sc]+Math.max(Goldmine(gold,sr,sc+1,mem),Math.max(Goldmine(gold,sr-1,sc+1,mem),Goldmine(gold,sr+1,sc+1,mem)));
+    }
+}
 */
 import java.io.*;
 import java.util.*;
