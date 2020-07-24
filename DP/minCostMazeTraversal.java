@@ -34,6 +34,77 @@ Sample Input
 Sample Output
 23
 */
+/*RECURSIVE
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int maze[][]=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                maze[i][j]=sc.nextInt();
+            }
+        }
+       System.out.println( mazeTravel(maze,0,0,n,m));
+    }
+    public static int mazeTravel(int maze[][],int sr,int sc,int dr,int dc){
+        if(sr==dr||sc==dc){
+            return Integer.MAX_VALUE;
+        }
+        if(sr==dr-1&&sc==dc-1){
+            return maze[sr][sc];
+        }
+        
+        int vertical=mazeTravel(maze,sr+1,sc,dr,dc);
+    
+        int horizontal=mazeTravel(maze,sr,sc+1,dr,dc);
+        return maze[sr][sc]+Math.min(vertical,horizontal);
+    }
+
+}
+*/
+/*
+Memorization
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int maze[][]=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                maze[i][j]=sc.nextInt();
+            }
+        }
+       System.out.println( mazeTravel(maze,0,0,n,m,new int[n][m]));
+    }
+    public static int mazeTravel(int maze[][],int sr,int sc,int dr,int dc,int mem[][]){
+        if(sr==dr||sc==dc){
+            return Integer.MAX_VALUE;
+        }
+        if(sr==dr-1&&sc==dc-1){
+            return mem[sr][sc]=maze[sr][sc];
+        }
+        if(mem[sr][sc]!=0){
+            return mem[sr][sc];
+        }
+        int vertical=mazeTravel(maze,sr+1,sc,dr,dc,mem);
+    
+        int horizontal=mazeTravel(maze,sr,sc+1,dr,dc,mem);
+        return mem[sr][sc]=maze[sr][sc]+Math.min(vertical,horizontal);
+    }
+
+}
+*/
 import java.io.*;
 import java.util.*;
 
