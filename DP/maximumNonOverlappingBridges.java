@@ -27,7 +27,55 @@ Sample Input
 Sample Output
 7
 */
+/*
+import java.io.*;
+import java.util.*;
 
+public class Main {
+    static class bridge implements Comparable < bridge > {
+        int np;
+        int sp;
+        public int compareTo(bridge o) {
+            if (this.np != o.np)
+            return this.np-o.np;
+            else
+            return this.sp-o.sp;
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        bridge[] barr = new bridge[n];
+        for (int i = 0; i < n; i++) {
+            barr[i]=new bridge();
+            barr[i].np = sc.nextInt();
+            barr[i].sp = sc.nextInt();
+        }
+        Arrays.sort(barr);
+
+        int lis[] = new int[n];
+        lis[0] = 1;
+
+        for (int i = 1; i < n; i++) {
+            int temp = 0;
+            for (int j = 0; j < i; j++) {
+                if (barr[i].sp > barr[j].sp && temp <= lis[j]) {
+                    temp = lis[j];
+                }
+            }
+            lis[i] = temp + 1;
+        }
+
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            max = Math.max(max, lis[i]);
+        }
+        System.out.println(max);
+    }
+
+
+}
+*/
 import java.io.*;
 import java.util.*;
 //Comparable interface is used to sort user defined datatype with help of compareTo class.
@@ -63,7 +111,7 @@ public class Main {
         //  dp[0]=1
         int ans=Integer.MIN_VALUE;
       
-      //appling longest common subsequence..
+      //appling longest increasing subsequence..
       
         for (int i = 0; i < n; i++) {
             int max = 0;
